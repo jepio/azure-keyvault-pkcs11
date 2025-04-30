@@ -362,7 +362,7 @@ CK_RV C_CloseSession(CK_SESSION_HANDLE hSession) {
     }
     for (auto it = active_sessions->begin(); it != active_sessions->end(); ) {
         if (*it == session) {
-            active_sessions->erase(it);
+            it = active_sessions->erase(it);
         } else {
             it++;
         }
@@ -376,7 +376,7 @@ CK_RV C_CloseAllSessions(CK_SLOT_ID slotID) {
         CkSession *session = *it;
         if (session->slot_id == slotID) {
             free(session);
-            active_sessions->erase(it);
+            it = active_sessions->erase(it);
         } else {
             it++;
         }
