@@ -1,8 +1,9 @@
-#include <string.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <stdio.h>
 #include "debug.h"
+
+#include <cstdarg>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 bool debug_enabled = false;
 void debug(const char *fmt, ...) {

@@ -1,7 +1,11 @@
+#include "attributes.h"
+
+#include <cstddef>
+#include <string>
+
 #include <openssl/ec.h>
 #include <openssl/evp.h>
 #include <openssl/x509.h>
-#include <string.h>
 
 #include "openssl-compat.h"
 #include "azure-keyvault-slot.h"

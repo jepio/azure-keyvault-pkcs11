@@ -1,3 +1,10 @@
+#include "azure-keyvault-slot.h"
+
+#include <cstddef>
+#include <json.h>
+#include <pkcs11.h>
+#include <string>
+
 #include <azure/keyvault/keys/key_client.hpp>
 #include <azure/identity/environment_credential.hpp>
 #include <azure/identity/chained_token_credential.hpp>
@@ -9,11 +16,7 @@
 #include <openssl/bn.h>
 #include <openssl/rsa.h>
 #include <openssl/evp.h>
-#include <string>
 
-#include <json.h>
-#include <pkcs11.h>
-#include "azure-keyvault-slot.h"
 #include "debug.h"
 
 CK_RV load_config_path(const std::string& path, json_object **config);

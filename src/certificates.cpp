@@ -1,5 +1,9 @@
-#include <stdio.h>
-#include <string.h>
+#include "certificates.h"
+
+#include <cstddef>
+#include <cstdio>
+#include <string>
+
 #include <openssl/pem.h>
 #include <openssl/x509.h>
 

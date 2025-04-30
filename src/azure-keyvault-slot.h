@@ -1,12 +1,13 @@
 #pragma once
 
+#include <cstdint>
 #include <string>
 #include <vector>
-#include <cstdint>
-#include <openssl/x509.h>
 
 #include <azure/keyvault/keys/key_client.hpp>
 #include <azure/keyvault/keys/cryptography/cryptography_client.hpp>
+
+#include <openssl/x509.h>
 
 using std::string;
 

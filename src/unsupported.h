@@ -1,3 +1,5 @@
+#pragma once
+
 #include "pkcs11-compat.h"
 
 CK_RV C_CancelFunction(CK_SESSION_HANDLE);

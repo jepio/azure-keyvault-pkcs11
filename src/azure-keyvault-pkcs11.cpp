@@ -1,23 +1,24 @@
+#include <algorithm>
 #include <assert.h>
-#include <string.h>
+#include <cstddef>
+#include <json.h>
+#include <string>
+#include <vector>
+
+#include <azure/keyvault/certificates/certificate_client.hpp>
+#include <azure/keyvault/keys/cryptography/cryptography_client.hpp>
+#include <azure/keyvault/keys/key_client.hpp>
+
 #include <openssl/ec.h>
 #include <openssl/evp.h>
 #include <openssl/x509.h>
-#include <json.h>
 
-#include <algorithm>
-#include <vector>
-
-#include <azure/keyvault/keys/key_client.hpp>
-#include <azure/keyvault/certificates/certificate_client.hpp>
-#include <azure/keyvault/keys/cryptography/cryptography_client.hpp>
-
-#include "pkcs11-compat.h"
-#include "openssl-compat.h"
 #include "attributes.h"
 #include "azure-keyvault-slot.h"
 #include "certificates.h"
 #include "debug.h"
+#include "openssl-compat.h"
+#include "pkcs11-compat.h"
 #include "unsupported.h"
 
 using std::string;

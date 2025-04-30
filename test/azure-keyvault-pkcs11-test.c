@@ -1,6 +1,7 @@
+#include <dlfcn.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <dlfcn.h>
+
 #include "../src/pkcs11-compat.h"
 
 void dump_bytes(const char* name, const unsigned char* bytes, unsigned long len) {
