@@ -5,11 +5,12 @@
  * The recommendation seems to be, long run, to switch to using NULL, true and false
  * directly rather than those macros.
  */
-#ifndef __PKCS11_COMPAT_H__
-#define __PKCS11_COMPAT_H__
 
-#include <stdbool.h>
+#pragma once
+
 #include <pkcs11.h>
+#include <stdbool.h>
+#include <stddef.h>
 
 #ifndef CK_NULL_PTR
 #define CK_NULL_PTR NULL
@@ -31,6 +32,3 @@
 #ifndef CKR_ACTION_PROHIBITED
 #define CKR_ACTION_PROHIBITED			(0x1BUL)
 #endif
-
-#endif /* __PKCS11_COMPAT_H__ */
-

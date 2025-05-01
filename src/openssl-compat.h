@@ -1,5 +1,4 @@
-#ifndef __OPENSSL_COMPAT_H
-#define __OPENSSL_COMPAT_H
+#pragma once
 
 #include <openssl/opensslv.h>
 
@@ -18,5 +17,3 @@
 #else
 #define OSSL_UNCONST(_type, _expr) (_expr)
 #endif
-
-#endif /* __OPENSSL_COMPAT_H */

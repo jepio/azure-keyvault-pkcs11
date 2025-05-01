@@ -1,4 +1,5 @@
-#include <string>
+#pragma once
+
 #include <openssl/x509.h>
 
 X509* parseCertificateFromFile(const char* filename);

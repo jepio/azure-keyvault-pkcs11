@@ -1,18 +1,19 @@
 #pragma once
 
+#include <cstdint>
 #include <string>
 #include <vector>
-#include <cstdint>
-#include <openssl/x509.h>
 
 #include <azure/keyvault/keys/key_client.hpp>
 #include <azure/keyvault/keys/cryptography/cryptography_client.hpp>
+
+#include <openssl/x509.h>
 
 using std::string;
 
 std::shared_ptr<Azure::Core::Credentials::TokenCredential> get_credential();
 
-class AwsKmsSlot {
+class AzureKeyVaultSlot {
 private:
     const string label;
     const string key_name;
@@ -25,8 +26,8 @@ private:
     void FetchPublicKeyData();
 
 public:
-    AwsKmsSlot(const string &label, const string &key_name, const string &vault_name,
-               const X509* certificate);
+    AzureKeyVaultSlot(const string &label, const string &key_name,
+                      const string &vault_name, const X509* certificate);
     const string& GetLabel();
     const string& GetKeyName();
     const string& GetVaultName();
