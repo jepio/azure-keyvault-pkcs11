@@ -268,6 +268,24 @@ CK_RV C_GetInfo(CK_INFO_PTR pInfo) {
     return CKR_OK;
 }
 
+CK_RV C_GetSessionInfo(CK_SESSION_HANDLE hSession, CK_SESSION_INFO_PTR pInfo) {
+    CkSession *session = (CkSession*)hSession;
+    if (session == NULL) {
+        return CKR_SESSION_HANDLE_INVALID;
+    }
+
+    if (pInfo == NULL_PTR) {
+        return CKR_ARGUMENTS_BAD;
+    }
+
+    pInfo->slotID = session->slot_id;
+    pInfo->state = CKS_RO_USER_FUNCTIONS;
+    pInfo->flags = CKF_SERIAL_SESSION;
+    pInfo->ulDeviceError = 0;
+
+    return CKR_OK;
+}
+
 CK_RV C_GetSlotList(CK_BBOOL tokenPresent, CK_SLOT_ID_PTR pSlotList, CK_ULONG_PTR pulCount) {
     if (pulCount == NULL_PTR) {
         return CKR_ARGUMENTS_BAD;
